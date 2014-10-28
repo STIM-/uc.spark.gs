@@ -170,11 +170,9 @@ jQuery(document).ready(function() {
 			+ '&email[email]=' + email
 			+ '&merge_vars[SOURCE]=Landing-Page'
 			+ '&double_optin=false'
-			+ '&send_welcome=true', function (resp) {
+			+ '&send_welcome=true').always (function (resp) {
 
 				$('img.loading').animate ({opacity: 1});
-
-				console.log (resp);
 
 				setTimeout (function () {
 
@@ -201,7 +199,7 @@ jQuery(document).ready(function() {
 
 					});
 
-				}, 2500);
+				}, 2000);
 
 			});
 
