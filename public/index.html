@@ -37,7 +37,7 @@
 
     <div id="pattern"></div>
     
-    <h1 class="tlt opacity-0">專為旅行而生的全新平台</h1>
+    <h1 class="tlt visibility-hidden">專為旅行而生的全新平台</h1>
 
 	<!-- ************** START / MAIN FUTURE ************** -->
     <section id="main-future" class="opacity-0">
@@ -105,20 +105,25 @@
             <a data-toggle="tooltip" data-placement="top" data-title="Twitter" data-trigger="hover" href="#" class="twitter"><i class="fa fa-twitter"></i></a>
             <a data-toggle="tooltip" data-placement="top" data-title="Google+" data-trigger="hover" href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
             -->
-
-            <div id="subscribe">
-                <form method="POST" id="notifyMe" action="#">
-                    <div class="form-group">
-                        <div class="controls">
-                            <input type="text" id="mail-sub" name="email" placeholder="輸入 Email，收到來自 Spark 的最新消息 &#9836;" class="form-control email srequiredField">
-                        </div>
-                    </div>
-                    <button class="btn btn-lg submit">訂閱</button>
-                </form>
-            </div>
-
         </div>
-        
+
+        <div id="subscribe">
+            <form method="POST" id="notifyMe" action="#">
+                <div class="form-group">
+                    <div class="controls">
+                        <input type="text" id="mail-sub" name="email" placeholder="輸入 Email，收到來自 Spark 的最新消息 &#9836;" class="form-control email srequiredField">
+                    </div>
+                </div>
+                <img class="loading opacity-0" src="assets/img/loading.gif" />
+                <button class="btn btn-lg submit">訂閱</button>
+                <div class="form-group">
+                    <div class="controls">
+                        <input type="text" id="message-sub" name="email" disabled="true" placeholder="謝謝您的訂閱，我們會更加努力的 &#10084;" class="form-control email srequiredField">
+                    </div>
+                </div>
+            </form>
+        </div>
+
 	</section>
     <!-- ************** END / MAIN FUTURE ************** -->
      
@@ -134,13 +139,10 @@
     		</a>
     	</div>
     </div>
-    
-    <audio id="beep-two" preload="auto">
-		<source src="assets/sounds/glass-tone.mp3" />
-	</audio>
-    
+
     <!-- ============ Javascript ============ -->
     <script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.color.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.lwtCountdown-1.0.js"></script>
     <script type="text/javascript" src="assets/js/jquery.vegas.js"></script>
@@ -154,7 +156,9 @@
     	$.vegas('slideshow', {
     		delay:8000,
     		backgrounds:[
-				{ src:'assets/img/maps-dark-60.png', fade:3000 }
+				//{ src:'https://c4.staticflickr.com/4/3801/13633736524_a1eff27519_c.jpg', fade:3000 }
+                //{ src:'http://i.istockimg.com/file_thumbview_approve/43155410/2/stock-photo-43155410-new-life.jpg', fade:3000 }
+                { src:'assets/img/maps-dark-60.png', fade:3000 }
     		]
     		})('overlay', {
     			src:'assets/overlays/05.png'

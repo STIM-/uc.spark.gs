@@ -203,6 +203,10 @@ a:hover {
 	display:none
 }
 
+.visibility-hidden {
+	visibility: hidden;
+}
+
 .tlt {
 	position: absolute;
     text-align: center;
@@ -909,13 +913,15 @@ html.swipebox-html.swipebox-touch {
 	padding: 15px;
 	position: absolute;
 	bottom: -80px;
-	width: 400px;
+	width: 402px;
 	z-index: 9999;
+	/*
 	-webkit-transition: all 1500ms ease 0s;
 	-moz-transition: all 1500ms ease 0s;
 	-ms-transition: all 1500ms ease 0s;
 	-o-transition: all 1500ms ease 0s;
 	transition: all 1500ms ease 0s;
+	*/
 }
 	
 #subscribe .form-control {
@@ -934,7 +940,9 @@ html.swipebox-html.swipebox-touch {
 	height: 42px;
 	outline: medium none;
 	padding: 10px 15px;
+	/*
 	transition: all 0.3s ease-in-out 0s;
+	*/
 	width: 295px;
 	color:#fff
 }
@@ -960,18 +968,43 @@ html.swipebox-html.swipebox-touch {
 #subscribe button.submit {
 	background-color: #236EC4;
 	border: medium none;
-	border-radius: 0 4px 4px 0;
+	border-radius: 4px;
 	color: #eee;
 	font-size: 16px;
 	line-height: 20px;
 	padding: 11px 16px;
+	/*
 	transition: all 0.3s ease-in-out 0s;
+	*/
 	width: 75px;
+	float: left;
 }
 
 #subscribe .submit.focus, #subscribe .submit:hover {
+	/*
 	background-color: #65A7F3;
 	color: #FFFFFF;
+	*/
+}
+
+#subscribe .submit.focus, #subscribe .submit+.form-group {
+	float: left;
+}
+
+#subscribe #message-sub {
+	border-radius: 0 4px 4px 0;
+	border-style: solid solid solid none;
+	border-width: 2px 2px 2px medium;
+	width: 0px;
+	padding: 10px 0;
+	opacity: 0;
+
+}
+
+#subscribe img.loading {
+	position: absolute;
+	top: 28px;
+	right: 21px;
 }
 
 .controls .fa {

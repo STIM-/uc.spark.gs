@@ -27,18 +27,18 @@ $(window).load(function() {
 	$('.globload').delay(2000).fadeOut("slow")
 
 	setTimeout(function() {
-		$('h1.tlt').removeClass('opacity-0').textillate({ in: { effect: 'fadeInUp', shuffle: false, delayScale: 2.0  } });
+		$('h1.tlt').textillate({ in: { effect: 'fadeInUp', shuffle: false, delayScale: 2.0  } });
 	}, 2800);
 	
 	setTimeout(function() {
 	
 	$(".tlt").addClass("fadeOut animated-fast");
-	}, 6500);
+	}, 5500);
 	
 	setTimeout(function() {
 	
 	$(".tlt").addClass("display-none");
-	}, 7800);
+	}, 6800);
 		
 	setTimeout(function() {
 	
@@ -48,27 +48,28 @@ $(window).load(function() {
 			$("#tit-main").addClass("animated fadeInDown");
 			$(".border").addClass("animated fadeInUp");
 			$(".link-box").addClass("animated fadeInUp");
+			$("#subscribe").addClass("animated fadeInUp");
 		
-		}, 7800);
+		}, 6800);
 	
 	setTimeout(function() {
 		
 		$(".days_dash").addClass("animated fadeInDown opacity-1");
-		}, 7800);
+		}, 6800);
 	
 	setTimeout(function() {
 	
 		$(".hours_dash").addClass("animated fadeInDown opacity-1");
-		}, 7700);
+		}, 7100);
 	
 	setTimeout(function() {
 	
 		$(".minutes_dash").addClass("animated fadeInDown opacity-1");
-		}, 8100);
+		}, 7400);
 	
 	setTimeout(function() {
 		$(".seconds_dash").addClass("animated fadeInDown opacity-1");
-		}, 8500);
+		}, 7700);
 		
 });
 
@@ -150,6 +151,14 @@ jQuery(document).ready(function() {
 
 	$('#notifyMe').submit (function () {
 
+		/*
+		$('#subscribe').animate ({width: 107, marginLeft: "-54px"}, {
+			duration: 500,
+			complete: function () {
+			}
+		});
+		*/
+
 		var email = $('#mail-sub').val ();
 
 		if (email == '')
@@ -163,7 +172,36 @@ jQuery(document).ready(function() {
 			+ '&double_optin=false'
 			+ '&send_welcome=true', function (resp) {
 
+				$('img.loading').animate ({opacity: 1});
+
 				console.log (resp);
+
+				setTimeout (function () {
+
+					$('img.loading').fadeOut ('fast', function () {
+
+						$('#mail-sub').animate ({width: 0, paddingLeft: 0, paddingRight: 0, opacity: 0}, {
+							duration: 450,
+							complete: function () {
+							}
+						});
+
+						$('.submit').blur ().animate ({backgroundColor: '#EA8C01', borderColor: '#FF9B08'}, {
+							duration: 450,
+							complete: function () {
+								$(this).html ('完成');
+							}
+						});
+
+						$('#message-sub').animate ({width: 263, paddingLeft: 15, paddingRight: 15, opacity: 1}, {
+							duration: 450,
+							complete: function () {
+							}
+						});
+
+					});
+
+				}, 2500);
 
 			});
 
