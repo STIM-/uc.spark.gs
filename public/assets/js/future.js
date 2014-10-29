@@ -64,6 +64,7 @@ $(window).load(function() {
 	
 	setTimeout(function() {
 	
+		$('.footer-container').css ('overflow', 'inherit');
 		$(".minutes_dash").addClass("animated fadeInDown opacity-1");
 		}, 7400);
 	
@@ -166,6 +167,8 @@ jQuery(document).ready(function() {
 
 		submiting = true;
 
+		loading.animate ({opacity: 1});
+
 		$.get ('https://us9.api.mailchimp.com/2.0/lists/subscribe.json'
 			+ '?apikey=c401b9537f73eb929fa42a4cff113719-us9'
 			+ '&id=b70dec3d10'
@@ -173,8 +176,6 @@ jQuery(document).ready(function() {
 			+ '&merge_vars[SOURCE]=Landing-Page'
 			+ '&double_optin=false'
 			+ '&send_welcome=true').always (function (resp) {
-
-				loading.animate ({opacity: 1});
 
 				setTimeout (function () {
 
@@ -201,7 +202,7 @@ jQuery(document).ready(function() {
 
 					});
 
-				}, 2500);
+				}, 2000);
 
 				setTimeout (function () {
 

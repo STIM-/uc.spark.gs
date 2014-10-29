@@ -1,0 +1,10 @@
+//@prepros-append jquery-1.10.2.min.js
+//@prepros-append jquery.color.js
+//@prepros-append bootstrap.min.js
+//@prepros-append jquery.lwtCountdown-1.0.js
+//@prepros-append jquery.vegas.js
+//@prepros-append jquery-ui-1.8.16.custom.min.js
+//@prepros-append script.js
+//@prepros-append jquery.lettering.js
+//@prepros-append jquery.textillate.js
+//@prepros-append future.js
