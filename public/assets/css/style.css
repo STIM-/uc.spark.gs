@@ -453,6 +453,7 @@ html.swipebox-html.swipebox-touch {
   }
 }
 
+
 /* *-*-*-* Skin *-*-*-* */ 
 
 #swipebox-overlay {
@@ -490,7 +491,9 @@ html.swipebox-html.swipebox-touch {
 	border-radius: 10px;
 	background: #000;
 	background: rgba(0,0,0,0.7);
+	/*
 	background: url(images/loading.gif) no-repeat center center; /* Loading Gif by http://preloaders.net/ */
+	*/
 	height: 32px;
 	left: 20px;
 	position: fixed;
@@ -751,6 +754,13 @@ html.swipebox-html.swipebox-touch {
 	transition: all 1s ease-in-out;
 }
 
+.footer-container {
+	width: 590px;
+	margin: 0 auto;
+	height: 140px;
+	overflow: hidden;
+}
+
 .link-box {
 	margin-top:0%;
 	-webkit-transition: all 1s ease-in-out;
@@ -907,14 +917,11 @@ html.swipebox-html.swipebox-touch {
 }
 
 #subscribe {
-	left: 50%;
-	margin-left: -200px;
 	overflow: hidden;
 	padding: 15px;
-	position: absolute;
-	bottom: -80px;
 	width: 402px;
-	z-index: 9999;
+	margin: 0 auto;
+	display: none;
 	/*
 	-webkit-transition: all 1500ms ease 0s;
 	-moz-transition: all 1500ms ease 0s;
@@ -1569,6 +1576,26 @@ img.img-responsive {
 /* *=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
 /* ====== 8. Media Queries ====== */
 /* *=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
+
+@media only screen and (max-width: 600px) {
+	.footer-container {
+		width: auto;
+	}
+}
+
+@media only screen and (max-height: 600px) {
+
+  .link-box {
+  	width: 180px;
+  	float: left;
+  }
+
+	#subscribe {
+		padding: 8px 0;
+		float: right;
+	}
+}
+
 
 /* *=*=*=*=*=*=*=*=*=* Small screen *=*=*=*=*=*=*=*=*=* */
 		

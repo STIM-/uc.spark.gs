@@ -48,7 +48,7 @@ $(window).load(function() {
 			$("#tit-main").addClass("animated fadeInDown");
 			$(".border").addClass("animated fadeInUp");
 			$(".link-box").addClass("animated fadeInUp");
-			$("#subscribe").addClass("animated fadeInUp");
+			$("#subscribe").show ().addClass("animated fadeInUp");
 		
 		}, 6800);
 	
