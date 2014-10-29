@@ -922,6 +922,7 @@ html.swipebox-html.swipebox-touch {
 	width: 402px;
 	margin: 0 auto;
 	display: none;
+	position: relative;
 	/*
 	-webkit-transition: all 1500ms ease 0s;
 	-moz-transition: all 1500ms ease 0s;
@@ -1011,7 +1012,7 @@ html.swipebox-html.swipebox-touch {
 #subscribe img.loading {
 	position: absolute;
 	top: 28px;
-	right: 21px;
+	right: 22px;
 }
 
 .controls .fa {
@@ -1593,6 +1594,11 @@ img.img-responsive {
 	#subscribe {
 		padding: 8px 0;
 		float: right;
+	}
+
+	#subscribe img.loading {
+		top: 22px;
+		right: 36px;
 	}
 }
 

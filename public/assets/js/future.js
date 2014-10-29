@@ -74,6 +74,7 @@ $(window).load(function() {
 });
 
 /* **** 2. Countdown **** */		
+var submiting = false;
 
 jQuery(document).ready(function() {
 	$('#countdown_dashboard').countDown({
@@ -151,18 +152,19 @@ jQuery(document).ready(function() {
 
 	$('#notifyMe').submit (function () {
 
-		/*
-		$('#subscribe').animate ({width: 107, marginLeft: "-54px"}, {
-			duration: 500,
-			complete: function () {
-			}
-		});
-		*/
-
-		var email = $('#mail-sub').val ();
-
-		if (email == '')
+		if (submiting)
 			return false;
+
+		var email   = $('#mail-sub')
+			, submit  = $('.submit')
+			, loading = $('img.loading')
+			, message = $('#message-sub')
+			;
+
+		if (email.val () == '')
+			return false;
+
+		submiting = true;
 
 		$.get ('https://us9.api.mailchimp.com/2.0/lists/subscribe.json'
 			+ '?apikey=c401b9537f73eb929fa42a4cff113719-us9'
@@ -172,26 +174,26 @@ jQuery(document).ready(function() {
 			+ '&double_optin=false'
 			+ '&send_welcome=true').always (function (resp) {
 
-				$('img.loading').animate ({opacity: 1});
+				loading.animate ({opacity: 1});
 
 				setTimeout (function () {
 
-					$('img.loading').fadeOut ('fast', function () {
+					loading.animate ({opacity: 0}, 'fast', function () {
 
-						$('#mail-sub').animate ({width: 0, paddingLeft: 0, paddingRight: 0, opacity: 0}, {
+						email.animate ({width: 0, paddingLeft: 0, paddingRight: 0, opacity: 0}, {
 							duration: 450,
 							complete: function () {
 							}
 						});
 
-						$('.submit').blur ().animate ({backgroundColor: '#EA8C01', borderColor: '#FF9B08'}, {
+						submit.blur ().animate ({backgroundColor: '#EA8C01', borderColor: '#FF9B08'}, {
 							duration: 450,
 							complete: function () {
 								$(this).html ('完成');
 							}
 						});
 
-						$('#message-sub').animate ({width: 263, paddingLeft: 15, paddingRight: 15, opacity: 1}, {
+						message.animate ({width: 295, paddingLeft: 15, paddingRight: 15, opacity: 1}, {
 							duration: 450,
 							complete: function () {
 							}
@@ -199,7 +201,32 @@ jQuery(document).ready(function() {
 
 					});
 
-				}, 2000);
+				}, 2500);
+
+				setTimeout (function () {
+
+					submiting = false;
+
+					email.val ('').animate ({width: 295, paddingLeft: 15, paddingRight: 15, opacity: 1}, {
+						duration: 450,
+						complete: function () {
+						}
+					});
+
+					submit.blur ().animate ({backgroundColor: '#236EC4', borderColor: '#EEEEEE'}, {
+						duration: 450,
+						complete: function () {
+							$(this).html ('完成');
+						}
+					});
+
+					message.animate ({width: 0, paddingLeft: 0, paddingRight: 0, opacity: 0}, {
+						duration: 450,
+						complete: function () {
+						}
+					});
+
+				}, 6000);
 
 			});
 
