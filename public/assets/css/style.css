@@ -739,7 +739,7 @@ html.swipebox-html.swipebox-touch {
 	font-weight:bold;
 	letter-spacing:-6px;
 	padding-right:4px;
-	background: url(../img/spark.png) center 0 no-repeat;
+	background: url(../img/spark.png) center center no-repeat;
 	text-indent: -9999px;
 	padding-top: 24px;
 	padding-bottom: 34px;
@@ -1213,7 +1213,8 @@ form.bad-email .fa, form.bad-email .message {
 #progress2 {
 	position:fixed;
 	bottom:0;
-	width:100%
+	width:100%;
+	z-index: 9999;
 }
 
 .pbar .ui-progressbar-value {
@@ -1578,12 +1579,6 @@ img.img-responsive {
 /* ====== 8. Media Queries ====== */
 /* *=*=*=*=*=*=*=*=*=*=*=*=*=*=*= */
 
-@media only screen and (max-width: 600px) {
-	.footer-container {
-		width: auto;
-	}
-}
-
 @media only screen and (max-height: 600px) {
 
   .link-box {
@@ -1651,18 +1646,42 @@ img.img-responsive {
 				width:100%;
 			}
 			
+			/*
 			#progress2 {
 				position:absolute;
 				bottom:0;
 				width:100%;
 			}
-			
+			*/
+			#progress2 {
+				background-color: #222;
+			}
+
 			#main-future {
 				margin: auto;
 				position: absolute;
 				text-align: center;
 				width: 100%;
 				top:3%;
+			}
+
+		  .footer-container .link-box {
+		  	width: 180px;
+		  	float: left;
+		  }
+
+			#subscribe {
+				padding: 8px 0;
+				float: right;
+			}
+
+			#subscribe img.loading {
+				top: 22px;
+				right: 36px;
+			}
+			
+			.footer-container {
+				margin-bottom: 30px;
 			}
 			
 			#subscribe .form-control {
@@ -1712,7 +1731,22 @@ img.img-responsive {
 			.well {
 				padding:0
 			}
-			
+
+		  .footer-container .link-box {
+		  	width: 180px;
+		  	float: left;
+		  }
+
+			#subscribe {
+				padding: 8px 0;
+				float: right;
+			}
+
+			#subscribe img.loading {
+				top: 22px;
+				right: 36px;
+			}
+
 			.sub-picture {
 				background-image: url('../img/re-video-landscape.jpg');
 			}
@@ -1735,6 +1769,10 @@ img.img-responsive {
 				line-height: 35px;
 			}
 			
+			h4 {
+				margin: 10px 0;
+			}
+
 			.dash {
 				margin:0;
 				width:100%;
@@ -1755,14 +1793,28 @@ img.img-responsive {
 				width: 100%;
 				top:0
 			}
-	
+
+			.footer-container {
+				width: 300px;
+				margin: 0 auto;
+				height: 140px;
+				overflow: hidden;
+			}
+
+			.footer-container .link-box {
+				width: auto;
+				float: inherit;
+				margin-bottom: 10px;
+			}
+
 			#subscribe {
 				margin-left: -150px;
 				width: 300px;
+				margin-bottom: 30px;
 			}
 			
 			#subscribe .form-control {
-				width: 270px;
+				width: 100%;
 				border:none;
 				border-radius:4px;
 				margin-bottom:10px;
@@ -1778,7 +1830,7 @@ img.img-responsive {
 				padding: 11px 16px;
 				transition: all 0.3s ease-in-out 0s;
 				width: 150px;
-				margin-left:23%
+				margin-left: 75px;
 			}
 			
 			#progress2 {
@@ -1787,12 +1839,15 @@ img.img-responsive {
 				width:100%;
 				margin:0;
 				padding:0;
+				background-color: #222;
 			}
 			
 			#main-content h1 {
 				font-size:25px;
 				letter-spacing:-3px;
-				line-height:35px
+				line-height:35px;
+				padding-top: 34px;
+				padding-bottom: 54px;
 			}
 			
 			#main-content h4 {
@@ -1855,6 +1910,10 @@ img.img-responsive {
 				line-height: 35px;
 			}
 			
+			h4 {
+				margin: 10px 0;
+			}
+
 			.dash-glob {
 				width:25%;
 			}
@@ -1874,15 +1933,28 @@ img.img-responsive {
 				width: 100%;
 				top:30px
 			}
-	
+
+			.footer-container {
+				width: 300px;
+				margin: 0 auto;
+				height: 140px;
+				overflow: hidden;
+			}
+
+			.footer-container .link-box {
+				width: auto;
+				float: inherit;
+				margin-bottom: 10px;
+			}
+
 			#subscribe {
 				margin-left: -150px;
 				width: 300px;
-				top:-150px;
+				margin-bottom: 30px;
 			}
 			
 			#subscribe .form-control {
-				width: 270px;
+				width: 100%;
 				border:none;
 				border-radius:4px;
 				margin-bottom:10px;
@@ -1898,7 +1970,7 @@ img.img-responsive {
 				padding: 11px 16px;
 				transition: all 0.3s ease-in-out 0s;
 				width: 150px;
-				margin-left:23%
+				margin-left: 75px;
 			}
 			
 			#progress2 {
@@ -1907,12 +1979,15 @@ img.img-responsive {
 				width:100%;
 				margin:0;
 				padding:0;
+				background-color: #222;
 			}
 			
 			#main-content h1 {
 				font-size:25px;
 				letter-spacing:-3px;
-				line-height:35px
+				line-height:35px;
+				padding-top: 34px;
+				padding-bottom: 54px;
 			}
 			
 			#main-content h4 {
