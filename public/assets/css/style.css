@@ -195,6 +195,10 @@ a:hover {
 	opacity:1;
 }
 
+.opacity-1-i {
+	opacity:1 !important;
+}
+
 .opacity-0 {
 	opacity:0;
 }

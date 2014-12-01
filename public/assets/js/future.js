@@ -37,6 +37,7 @@ $(window).load(function() {
 	if (mcheck)
 		$('.submit').html ('訂閱電子報');
 
+	/*
 	$('.globload').delay(2000).fadeOut("slow")
 
 	setTimeout(function() {
@@ -52,19 +53,22 @@ $(window).load(function() {
 	
 	$(".tlt").addClass("display-none");
 	}, 6800);
+	*/
 		
 	setTimeout(function() {
 	
 			$("#main-future").removeClass("opacity-0").addClass("opacity-1 animated fadeIn");
-			$("#progress2").removeClass("opacity-0").addClass("opacity-1 animated slideInUp");
 			$(".control-video").removeClass("opacity-0").addClass("opacity-1 animated fadeIn");
-			$("#tit-main").addClass("animated fadeInDown");
-			$(".border").addClass("animated fadeInUp");
-			$(".link-box").addClass("animated fadeInUp");
-			$("#subscribe").show ().addClass("animated fadeInUp");
-		
-		}, 6800);
+			$("#tit-main").addClass("animated fadeIn");
+			$(".border").addClass("animated fadeIn");
+			$(".link-box").addClass("animated fadeIn");
+			$(".link-box").addClass("animated fadeIn");
+			$("#subscribe").show ().addClass("animated fadeIn");
+			$("#main-content h4").addClass("animated fadeIn");
+
+		}, 0);
 	
+	/*
 	setTimeout(function() {
 		
 		$(".days_dash").addClass("animated fadeInDown opacity-1");
@@ -84,6 +88,7 @@ $(window).load(function() {
 	setTimeout(function() {
 		$(".seconds_dash").addClass("animated fadeInDown opacity-1");
 		}, 7700);
+	*/
 		
 });
 
