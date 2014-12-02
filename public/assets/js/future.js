@@ -96,6 +96,8 @@ $(window).load(function() {
 var submiting = false;
 
 jQuery(document).ready(function() {
+
+	/*
 	$('#countdown_dashboard').countDown({
 		targetDate: {
 			'day': 		1,
@@ -107,12 +109,15 @@ jQuery(document).ready(function() {
 		},
 		omitWeeks: true
 	});
+	*/
 	
 	/* **** 3. Carousel **** */
 	
+	/*
 	$('.carousel').carousel({
 	  interval: 5000
 	})
+	*/
 	
 	/* ****** 4. Map ******* */
 	/*
@@ -174,7 +179,7 @@ jQuery(document).ready(function() {
 			return false;
 
 		var email   = $('#mail-sub')
-			, submit  = $('.submit')
+			, submit  = $(this).find ('.submit')
 			, loading = $('img.loading')
 			, message = $('#message-sub')
 			;
